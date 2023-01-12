@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { HeroesPage, HeroDetailPage } from '../pages/';
 import { Navbar } from '../components/ui/Navbar';
+import Footer from '../components/ui/Footer';
 
 const HeroesRouter = () => {
 	return (
@@ -12,6 +13,7 @@ const HeroesRouter = () => {
 					<Route path='/hero/:heroId' element={<HeroDetailPage />} />
 				</Routes>
 			</div>
+			<Footer />
 		</>
 	);
 };

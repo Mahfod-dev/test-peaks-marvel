@@ -3,7 +3,7 @@ import { HeroCard } from './HeroCard';
 
 export const HeroList = () => {
 	const { heroes } = useHeroes();
-	console.log(heroes);
+	
 	return (
 		<div className='row row-cols-1 row-cols-md-3 g-3'>
 			{heroes.map((hero) => {
