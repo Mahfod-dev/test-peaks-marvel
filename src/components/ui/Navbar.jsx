@@ -8,7 +8,7 @@ export function Navbar() {
 				Heroes
 			</Link>
 
-			<div className='navbar-collapse'>
+			{/* <div className='navbar-collapse'>
 				<div className='navbar-nav'>
 					<NavLink
 						className={(isActive) =>
@@ -20,7 +20,7 @@ export function Navbar() {
 
 			
 				</div>
-			</div>
+			</div> */}
 		</nav>
 	);
 }
