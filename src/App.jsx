@@ -1,4 +1,4 @@
-import HeroesRouter from "./HeroesRouter"
+import HeroesRouter from "./router/HeroesRouter"
 
 function App() {
 
