@@ -1,7 +1,10 @@
-
+import { HeroList } from '../components/HeroList';
 
 export const HeroesPage = () => {
-
-
-	return <div>HeroesPage</div>;
+	return (
+		<>
+			<h1>Marvel Heroes</h1>
+			<HeroList />
+		</>
+	);
 };
