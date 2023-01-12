@@ -26,7 +26,7 @@ export const HeroDetailPage = () => {
 	}
 
 	return (
-		<div className='row mt-5'>
+		<div className='row mt-5' style={{ height: '100vh' }}>
 			<div className='col-4'>
 				<img src={heroImageUrl} alt={hero.name} className='img-thumbnail' />
 			</div>
@@ -43,17 +43,14 @@ export const HeroDetailPage = () => {
 						<b>Comics:</b> {hero.comics.available}
 					</li>
 					<b>Comics:</b>
-					{heroThirdComics.map((comic) => {
-						return <li className='list-group-item'>{comic}</li>;
+					{heroThirdComics.map((comic, index) => {
+						return (
+							<li key={index} className='list-group-item'>
+								{comic}
+							</li>
+						);
 					})}
-
-					{/* <li className='list-group-item'>
-						<b>First apperance:</b> {hero.first_appearance}
-					</li> */}
 				</ul>
-
-				{/* <h5 className='mt-3'>Characters</h5>
-				<p>{hero.characters}</p> */}
 
 				<button className='btn btn-outline-info' onClick={onNavigateBack}>
 					Back

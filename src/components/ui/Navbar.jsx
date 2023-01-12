@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 export function Navbar() {
 	return (
@@ -7,20 +7,6 @@ export function Navbar() {
 			<Link className='navbar-brand' to='/'>
 				Heroes
 			</Link>
-
-			{/* <div className='navbar-collapse'>
-				<div className='navbar-nav'>
-					<NavLink
-						className={(isActive) =>
-							`nav-item nav-link ${isActive ? 'active' : ''}`
-						}
-						to='/marvel'>
-						Marvel
-					</NavLink>
-
-			
-				</div>
-			</div> */}
 		</nav>
 	);
 }
