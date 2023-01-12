@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-     "docs": "react-docgen --pretty ./src/components > docs.json"
+    "docs": "react-docgen --pretty ./src/components > docs.json"
   },
   "dependencies": {
+    "js-md5": "^0.7.3",
     "react": "^18.2.0",
     "react-docgen-displayname-handler": "^3.0.2",
     "react-dom": "^18.2.0",
