@@ -1,17 +1,14 @@
 export const getHeroById = (id, heroes) => {
-	    return heroes.find((hero) => hero.id === id);
+	return heroes.find((hero) => hero.id === id);
 };
 
-export const getHeroImage=(image)=>{
+export const getHeroImage = (image) => {
+	return `${image?.path}.${image?.extension}`;
+};
 
-    return `${image.path}.${image.extension}`;
-}
-
-export const getComicsByThird=({comics})=>{
-  const comicsDetails = comics.items.slice(0,3).map((comic)=>{
-
-        return comic.name
-
-    })
-    return comicsDetails
-}
+export const getComicsByThird = ({ comics }) => {
+	const comicsDetails = comics.items.slice(0, 3).map((comic) => {
+		return comic.name;
+	});
+	return comicsDetails;
+};

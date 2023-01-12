@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getHeroImage } from '../helpers/getHeroById';
+import PropTypes from 'prop-types';
 
 /**
  * HeroCard is a reusable component that displays a message.
@@ -8,10 +9,8 @@ import { getHeroImage } from '../helpers/getHeroById';
  */
 
 export function HeroCard({ id, description, name, thumbnail }) {
-	
 	const heroImageUrl = getHeroImage(thumbnail);
 
-	
 	return (
 		<div className='col'>
 			<div className='card' style={{ width: '18rem' }}>
@@ -30,3 +29,9 @@ export function HeroCard({ id, description, name, thumbnail }) {
 		</div>
 	);
 }
+
+HeroCard.propTypes = {
+	name: PropTypes.string.isRequired,
+	description: PropTypes.string,
+
+};
