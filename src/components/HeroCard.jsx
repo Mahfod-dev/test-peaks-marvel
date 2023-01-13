@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
  */
 
 export function HeroCard({ id, description, name, thumbnail }) {
+
 	const heroImageUrl = getHeroImage(thumbnail);
 
 	return (
@@ -33,5 +34,6 @@ export function HeroCard({ id, description, name, thumbnail }) {
 HeroCard.propTypes = {
 	name: PropTypes.string.isRequired,
 	description: PropTypes.string,
+	thumbnail: PropTypes.object.isRequired,
 
 };

@@ -8,7 +8,7 @@ export const HeroesPage = () => {
 	if (loading) {
 		return <Spinner />;
 	}
-console.log(loading);
+
 	return (
 		<div>
 			<h1>Marvel Heroes</h1>

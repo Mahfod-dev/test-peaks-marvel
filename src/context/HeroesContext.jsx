@@ -1,7 +1,7 @@
 import { useContext, createContext, useState, useEffect } from 'react';
 import { loadHeroesCharacters } from '../api/fetchApiMarvel';
 
-const HeroesContext = createContext();
+export const HeroesContext = createContext();
 
 export const HeroesProvider = ({ children }) => {
 	const [heroes, setHereos] = useState([]);
