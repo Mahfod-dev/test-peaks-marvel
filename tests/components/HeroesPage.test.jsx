@@ -4,6 +4,8 @@ import { render, screen } from '@testing-library/react';
 import { HeroesContext } from '../../src/context/HeroesContext';
 
 describe('HeroesPage', () => {
+	const title = 'Marvel Heroes';
+
 	test('should render title h1', () => {
 		render(
 			<HeroesContext.Provider value={{ loading: false, heroes: [] }}>
@@ -11,8 +13,6 @@ describe('HeroesPage', () => {
 			</HeroesContext.Provider>
 		);
 
-		expect(screen.getByRole('heading', { level: 1 }).innerHTML).toBe(
-			'Marvel Heroes'
-		);
+		expect(screen.getByRole('heading', { level: 1 }).innerHTML).toBe(title);
 	});
 });

@@ -9,13 +9,13 @@ import PropTypes from 'prop-types';
  */
 
 export function HeroCard({ id, description, name, thumbnail }) {
-
+	
 	const heroImageUrl = getHeroImage(thumbnail);
 
 	return (
 		<div className='col'>
 			<div className='card' style={{ width: '18rem' }}>
-				<img className='card-img-top' src={heroImageUrl} alt={description} />
+				<img className='card-img-top' src={heroImageUrl} alt={name} />
 				<div className='card-body'>
 					<Link to={`/hero/${id}`} className='card-title'>
 						{name}
@@ -32,8 +32,8 @@ export function HeroCard({ id, description, name, thumbnail }) {
 }
 
 HeroCard.propTypes = {
+	id: PropTypes.number.isRequired,
 	name: PropTypes.string.isRequired,
 	description: PropTypes.string,
 	thumbnail: PropTypes.object.isRequired,
-
 };
