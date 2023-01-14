@@ -1,5 +1,25 @@
 import Button from "./ui/Button";
 
+
+/**
+ *  Paginate is a component that shows the pagination.
+ * @param {object} heroes - The heroes.
+ * @param {number} page - The page.
+ * @param {function} nextPage - The next page function.
+ * @param {function} prevPage - The previous page function.
+ * @component
+ * @example
+ * return (
+ * <Paginate />
+ * )
+ * @returns {JSX.Element} - A JSX element that displays a Paginate.
+
+ * */
+
+
+
+
+
 export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
 	return (
 		<div

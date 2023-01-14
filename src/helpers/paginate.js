@@ -1,3 +1,21 @@
+
+/**
+ *  This function will take an array of heroes and return an array of arrays of heroes
+ * with a maximum of 9 heroes per array.
+ * This is useful for pagination.
+ * @param {Array} heroes
+ * @returns {Array} newHeroes
+ * @example
+ * paginate(heroes){
+ *         return newHeroes
+ * }
+ */
+
+
+
+
+
+
 export const paginate = (heroes) => {
  
 const itemsPerPage = 9
