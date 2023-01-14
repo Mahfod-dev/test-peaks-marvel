@@ -38,7 +38,7 @@ describe('HeroCard', () => {
 			{ wrapper: BrowserRouter }
 		);
 
-		// screen.debug();
+		
 
 		const { src, alt } = screen.getByRole('img');
 
