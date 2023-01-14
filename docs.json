@@ -1,0 +1,57 @@
+{
+  "src/components/HeroCard.jsx": {
+    "description": "HeroCard is a reusable component that displays a card of heroes.\n\n@component\n@param {number} id - The id of the hero.\n@param {string} name - The name of the hero.\n@param {string} description - The description of the hero.\n@param {object} thumbnail - The thumbnail of the hero.\n@param {func} getHeroImage - The function to get the hero image.\n@returns {JSX.Element} - A JSX element that displays a card of heroes.\n@example\nconst id = 1;\nconst name='superman';\nconst description='superman is a hero';\nconst thumbnail = { path: 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087', extension: 'jpg' };\nreturn (\n <HeroCard id={id} name={name} description={description} thumbnail={thumbnail} />\n)",
+    "displayName": "HeroCard",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The id of the hero."
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name of the hero."
+      },
+      "description": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The description of the hero.\n@default 'sorry we will soon have the description'"
+      },
+      "thumbnail": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": "The thumbnail of the hero.\n@default 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087'\n@default 'jpg'"
+      }
+    }
+  },
+  "src/components/HeroList.jsx": {
+    "description": "Component HeroList for showing details of the heroes.\n@component\n@param {object} heroes - The heroes object.\n@param {boolean} loading - The loading state.\n@example\nconst heroes = [\n{\nid: 1,\nname: 'superman',\ndescription: 'superman is a hero',\nthumbnail: { path: 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087', extension: 'jpg' }\n}];\nconst loading = false;\nreturn (\n<HeroList heroes={heroes} />\n)\n\n@returns {JSX.Element} - A JSX element that displays a list of heroes.\n\n@example\nconst loading = true;\nif (loading) {\n\t\treturn <Spinner />;\n\t}\n @returns {JSX.Element} - A JSX element that displays a spinner.",
+    "displayName": "HeroList",
+    "methods": []
+  },
+  "src/components/ui/Footer.jsx": {
+    "description": "Component for showing Footer.\n\n@component\n@example\nreturn (\n<Footer />\n)\n@returns {JSX.Element} - A JSX element that displays a Footer.",
+    "displayName": "Footer",
+    "methods": []
+  },
+  "src/components/ui/Navbar.jsx": {
+    "description": "Component for showing Navbar.\n\n@component\n@example\nreturn (\n<Navbar />\n)\n@returns {JSX.Element} - A JSX element that displays a Navbar.",
+    "displayName": "Navbar",
+    "methods": []
+  },
+  "src/components/ui/Spinner.jsx": {
+    "description": "Component Spinner for showing spinner.\n\n@component\n\n@example\nreturn (\n<Spinner />\n)\n@returns {JSX.Element} - A JSX element that displays a spinner.",
+    "displayName": "Spinner",
+    "methods": []
+  }
+}

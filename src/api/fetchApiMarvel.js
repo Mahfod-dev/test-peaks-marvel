@@ -1,4 +1,5 @@
 import md5 from 'js-md5';
+import { paginate } from '../helpers/paginate';
 
 /**
  * @description load heroes characters
@@ -13,7 +14,7 @@ import md5 from 'js-md5';
 
 const PUBLIC_KEY = import.meta.env.VITE_API_KEY;
 const PRIVATE_KEY = import.meta.env.VITE_PRIVATE_KEY;
-const limit = 20;
+const limit = 100;
 
 export async function loadHeroesCharacters() {
 	const ts = Number(new Date());
@@ -28,7 +29,7 @@ export async function loadHeroesCharacters() {
 	if (response.ok) {
 		const { data } = await response.json();
 		console.log(data.results);
-		return data.results;
+		return paginate(data.results);
 	} else {
 		throw new Error('Error to load list of heroes');
 	}
