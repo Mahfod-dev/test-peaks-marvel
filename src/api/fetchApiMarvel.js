@@ -6,6 +6,7 @@ const limit = 20;
 
 export async function loadHeroesCharacters() {
 	const ts = Number(new Date());
+
 	const hash = md5.create();
 	hash.update(ts + PRIVATE_KEY + PUBLIC_KEY);
 
@@ -15,7 +16,7 @@ export async function loadHeroesCharacters() {
 
 	if (response.ok) {
 		const { data } = await response.json();
-
+		console.log(data.results);
 		return data.results;
 	} else {
 		throw new Error('Error to load list of heroes');
