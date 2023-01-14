@@ -28,7 +28,9 @@ your machine.
 
 Installation:
 
-Create a `.env` file at the root of the project based on `.env.example` and add your unique `VITE_API_KEY` and `VITE_PRIVATE_KEY` from Marvel Developer Portal `https://developer.marvel.com`
+Create a `.env` file at the root of the project based on `.env.example` and add
+your unique `VITE_API_KEY` and `VITE_PRIVATE_KEY` from Marvel Developer Portal
+`https://developer.marvel.com`
 
 `npm install`
 
@@ -42,4 +44,4 @@ To Start Server:
 
 To Visit App:
 
-`localhost:5173 or localhost:3000`
+`localhost:5173, localhost:3000, https://test-peaks-marvel.vercel.app/ `
