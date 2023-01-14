@@ -3,6 +3,23 @@ import { HeroesPage, HeroDetailPage } from '../pages/';
 import { Navbar } from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
 
+/**
+ * Component for showing HeroesRouter.
+ * @component
+ * @example
+ * return (
+ * <HeroesRouter />
+ * )
+ * @returns {JSX.Element} - A JSX element that displays a HeroesRouter.
+ */
+
+
+
+
+
+
+
+
 const HeroesRouter = () => {
 	return (
 		<>

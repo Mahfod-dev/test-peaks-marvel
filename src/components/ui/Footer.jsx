@@ -1,3 +1,18 @@
+
+/**
+ * Component for showing Footer.
+ *
+ * @component
+ * @example
+ * return (
+ * <Footer />
+ * )
+ * @returns {JSX.Element} - A JSX element that displays a Footer.
+ * 
+ */
+
+
+
 const Footer = () => {
 	return (
 		<footer className='bg-dark mt-3 text-center text-lg-start'>

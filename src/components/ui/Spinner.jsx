@@ -1,3 +1,22 @@
+/**
+ * Component Spinner for showing spinner.
+ *
+ * @component
+ * 
+ * @example
+ * return (
+ * <Spinner />
+ * )
+ * @returns {JSX.Element} - A JSX element that displays a spinner.
+ * 
+ */
+
+
+
+
+
+
+
 const Spinner = () => {
 	return (
 		<div
