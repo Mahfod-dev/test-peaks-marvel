@@ -1,6 +1,5 @@
 import md5 from 'js-md5';
 
-
 /**
  * @description load heroes characters
  * @returns {Array} heroes
@@ -8,14 +7,9 @@ import md5 from 'js-md5';
  * loadHeroesCharacters(){
  * 		return heroes
  * }
- * 
- * 
+ *
+ *
  */
-
-
-
-
-
 
 const PUBLIC_KEY = import.meta.env.VITE_API_KEY;
 const PRIVATE_KEY = import.meta.env.VITE_PRIVATE_KEY;
