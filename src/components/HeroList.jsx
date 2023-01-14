@@ -4,7 +4,7 @@ import Spinner from './ui/Spinner';
 
 export const HeroList = () => {
 	const { heroes, loading } = useHeroes();
-
+	console.log(heroes)
 	if (loading) {
 		return <Spinner />;
 	}
