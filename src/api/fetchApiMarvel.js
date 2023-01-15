@@ -28,7 +28,7 @@ export async function loadHeroesCharacters() {
 
 	if (response.ok) {
 		const { data } = await response.json();
-		console.log(data.results);
+		
 		return paginate(data.results);
 	} else {
 		throw new Error('Error to load list of heroes');

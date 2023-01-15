@@ -9,7 +9,8 @@ describe('fetchApiMarvel()', () => {
 		const heroes = await loadHeroesCharacters();
 
 		expect(heroes.length).toBeGreaterThan(0);
-		expect(heroes[0]).toEqual({
+
+		expect(heroes[0][0]).toEqual({
 			id: expect.any(Number),
 			comics: expect.any(Object),
 			series: expect.any(Object),
