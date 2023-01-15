@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { useHeroes } from '../context/HeroesContext';
 import {
@@ -6,8 +6,9 @@ import {
 	getHeroImage,
 	getComicsByThird,
 } from '../helpers/getHeroById';
-import { toogleFavorite,existInFavorites } from '../helpers/localFavorite';
+import { toogleFavorite, existInFavorites } from '../helpers/localFavorite';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { heroesLocalStorage } from '../helpers/localFavorite';
 
 /**
  *  Component HeroDetailPage to show the detail of the hero
@@ -45,6 +46,8 @@ export const HeroDetailPage = () => {
 
 	const hero = getHeroById(+heroId, heroes);
 
+	const heroLocalStorage = heroesLocalStorage();
+	console.log(heroLocalStorage.length);
 	if (!hero) {
 		return <Navigate to='/' />;
 	}
@@ -57,7 +60,6 @@ export const HeroDetailPage = () => {
 	const heroThirdComics = getComicsByThird(hero);
 
 	const onClickFavorite = () => {
-		
 		setIsFavorite(!isFavorite);
 		toogleFavorite(hero.id);
 	};
@@ -68,18 +70,32 @@ export const HeroDetailPage = () => {
 				<img src={heroImageUrl} alt={hero.name} className='img-thumbnail' />
 			</div>
 			<div className='col-8'>
-				<div style={{ width: '80px' }} onClick={onClickFavorite}>
+		{
+			heroLocalStorage.length > 5 ? (
+				<div>Vous avez atteint le quota</div>) :
+						<div
+					style={{ width: '80px' }}
+					onClick={onClickFavorite}>
 					{isFavorite ? (
-						<div>
-							<AiFillHeart className='icon-heart' /> <span>Favorite</span>
-						</div>
+						<AiFillHeart className='icon-heart' />
 					) : (
-						<div>
-							<AiOutlineHeart className='icon-heart' />
-							<span>Delete Favorite</span>
-						</div>
+						<AiOutlineHeart className='icon-heart' />
 					)}
 				</div>
+			
+		}
+
+
+
+				{/* <div
+					style={{ width: '80px' }}
+					onClick={onClickFavorite}>
+					{isFavorite ? (
+						<AiFillHeart className='icon-heart' />
+					) : (
+						<AiOutlineHeart className='icon-heart' />
+					)}
+				</div> */}
 
 				<h3>{hero.name}</h3>
 				<ul className='list-group list-group-flush'>
