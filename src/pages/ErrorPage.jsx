@@ -1,5 +1,18 @@
 import { Link } from 'react-router-dom';
 
+
+/**
+ *  Component for showing ErrorPage.
+ * @component
+ * @example
+ * return (
+ * <ErrorPage />
+ * )
+ * @returns {JSX.Element} - A JSX element that displays a ErrorPage.
+ */
+
+
+
 export const ErrorPage = () => {
 	return (
 		<div className='d-flex align-items-center justify-content-center vh-100'>
