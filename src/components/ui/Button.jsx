@@ -14,9 +14,13 @@
  *
  */
 
-const Button = ({ onClick, ariaLabel, name, description }) => {
+const Button = ({ onClick, ariaLabel, name, description, datatest }) => {
 	return (
-		<button onClick={onClick} className='page-link' aria-label={ariaLabel}>
+		<button
+			
+			onClick={onClick}
+			className='page-link'
+			aria-label={ariaLabel}>
 			<span aria-hidden='true'>{description}</span>
 			<span className='sr-only'>{name}</span>
 		</button>

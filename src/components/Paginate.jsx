@@ -1,5 +1,4 @@
-import Button from "./ui/Button";
-
+import Button from './ui/Button';
 
 /**
  *  Paginate is a component that shows the pagination.
@@ -16,10 +15,6 @@ import Button from "./ui/Button";
 
  * */
 
-
-
-
-
 export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
 	return (
 		<div
@@ -27,14 +22,18 @@ export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
 			<nav aria-label='Page navigation'>
 				<ul className='pagination'>
 					<li className='page-item'>
-
-                    <Button onClick={prevPage} ariaLabel='Previous' description='&laquo;' name='Previous' />
-
-                    </li>
+						<Button
+							onClick={prevPage}
+							ariaLabel='Previous'
+							description='&laquo;'
+							name='Previous'
+						/>
+					</li>
 					{heroes.map((_, index) => {
 						return (
 							<li key={index} className='page-item'>
 								<button
+									data-testid='paginate-button'
 									className={`page-link ${index === page ? 'active' : null}`}>
 									{index + 1}
 								</button>
@@ -43,8 +42,13 @@ export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
 					})}
 
 					<li className='page-item'>
-                        <Button onClick={nextPage} ariaLabel='Next' description='&raquo;' name='Next' />
-                    </li>
+						<Button
+							onClick={nextPage}
+							ariaLabel='Next'
+							description='&raquo;'
+							name='Next'
+						/>
+					</li>
 				</ul>
 			</nav>
 		</div>
