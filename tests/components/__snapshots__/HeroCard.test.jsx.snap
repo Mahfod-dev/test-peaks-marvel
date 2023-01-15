@@ -3,32 +3,27 @@
 exports[`HeroCard > should render match snapshot  1`] = `
 <div>
   <div
-    class="col"
+    class="my-card"
   >
-    <div
-      class="card"
-      style="width: 18rem;"
+    <img
+      alt="A-Bomb (HAS)"
+      class="img img-responsive"
+      src="http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg"
+    />
+    <a
+      class="profile-name"
+      href="/hero/1017100"
     >
-      <img
-        alt="A-Bomb (HAS)"
-        class="card-img-top"
-        src="http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg"
-      />
-      <div
-        class="card-body"
+      A-Bomb (HAS)
+    </a>
+    <div
+      class="profile-overview"
+    >
+      <p
+        class="card-text"
       >
-        <a
-          class="card-title"
-          href="/hero/1017100"
-        >
-          A-Bomb (HAS)
-        </a>
-        <p
-          class="card-text"
-        >
-          Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!  A-Bomb (HAS)
-        </p>
-      </div>
+        Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!  A-Bomb (HAS)
+      </p>
     </div>
   </div>
 </div>
