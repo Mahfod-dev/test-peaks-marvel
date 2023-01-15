@@ -15,7 +15,7 @@ import Button from './ui/Button';
 
  * */
 
-export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
+export const Paginate = ({ heroes, page, nextPage, prevPage, setPage }) => {
 	return (
 		<div
 			style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
@@ -33,6 +33,7 @@ export const Paginate = ({ heroes, page, nextPage, prevPage }) => {
 						return (
 							<li key={index} className='page-item'>
 								<button
+									onClick={() => setPage(index)}
 									data-testid='paginate-button'
 									className={`page-link ${index === page ? 'active' : null}`}>
 									{index + 1}

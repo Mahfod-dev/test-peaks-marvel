@@ -42,7 +42,7 @@ import { Paginate } from '../components/Paginate';
  */
 
 export const HeroesPage = () => {
-	const { loading, heroes, page, nextPage, prevPage } = useHeroes();
+	const { loading, heroes, page, nextPage, prevPage,setPage } = useHeroes();
 
 	if (loading) {
 		return <Spinner />;
@@ -57,6 +57,7 @@ export const HeroesPage = () => {
 				page={page}
 				nextPage={nextPage}
 				prevPage={prevPage}
+				setPage={setPage}
 			/>
 		</div>
 	);

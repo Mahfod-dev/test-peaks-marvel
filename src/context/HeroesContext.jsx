@@ -76,7 +76,7 @@ export const HeroesProvider = ({ children }) => {
 	};
 
 	return (
-		<HeroesContext.Provider value={{ heroes, loading,page,prevPage,nextPage }}>
+		<HeroesContext.Provider value={{ heroes, loading,page,setPage,prevPage,nextPage }}>
 			{children}
 		</HeroesContext.Provider>
 	);

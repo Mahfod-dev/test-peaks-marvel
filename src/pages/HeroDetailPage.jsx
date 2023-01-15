@@ -87,15 +87,6 @@ export const HeroDetailPage = () => {
 
 
 
-				{/* <div
-					style={{ width: '80px' }}
-					onClick={onClickFavorite}>
-					{isFavorite ? (
-						<AiFillHeart className='icon-heart' />
-					) : (
-						<AiOutlineHeart className='icon-heart' />
-					)}
-				</div> */}
 
 				<h3>{hero.name}</h3>
 				<ul className='list-group list-group-flush'>
