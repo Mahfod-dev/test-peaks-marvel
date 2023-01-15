@@ -13,13 +13,6 @@ import Footer from '../components/ui/Footer';
  * @returns {JSX.Element} - A JSX element that displays a HeroesRouter.
  */
 
-
-
-
-
-
-
-
 const HeroesRouter = () => {
 	return (
 		<>
@@ -28,6 +21,7 @@ const HeroesRouter = () => {
 				<Routes>
 					<Route path='/' element={<HeroesPage />} />
 					<Route path='/hero/:heroId' element={<HeroDetailPage />} />
+					<Route path='*' element={<h1>404: Not Found</h1>} />
 				</Routes>
 			</div>
 			<Footer />
