@@ -6,6 +6,35 @@ import {
 	getComicsByThird,
 } from '../helpers/getHeroById';
 
+/**
+ *  Component HeroDetailPage to show the detail of the hero
+ * @component
+ * @param {number} heroId - The id of the hero.
+ * @param {func} navigate - The function to navigate.
+ * @param {object} heroes - The heroes.
+ * @param {object} hero - The hero.
+ * @param {func} onNavigateBack - The function to navigate back.
+ * @param {string} heroImageUrl - The hero image url.
+ * @param {array} heroThirdComics - The hero third comics.
+ * @returns {JSX.Element} - A JSX element that displays the detail of the hero.
+ * @example
+ * const heroId = 1;
+ * const navigate = () => {};
+ * const heroes = [{ id: 1, name: 'superman' }];
+ * const hero = { id: 1, name: 'superman' };
+ * const onNavigateBack = () => {};
+ * const heroImageUrl = 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087';
+ * const heroThirdComics = [{ id: 1, name: 'superman' }];
+ * return (
+ * <HeroDetailPage  />
+ * )
+ */
+
+
+
+
+
+
 export const HeroDetailPage = () => {
 	const { heroId } = useParams();
 	const navigate = useNavigate();
