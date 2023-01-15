@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { HeroesPage, HeroDetailPage } from '../pages/';
+import { HeroesPage, HeroDetailPage, ErrorPage, FavoritePage } from '../pages/';
 import { Navbar } from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
-import { ErrorPage } from '../pages/ErrorPage';
 
 /**
  * Component for showing HeroesRouter.
@@ -22,8 +21,8 @@ const HeroesRouter = () => {
 				<Routes>
 					<Route path='/' element={<HeroesPage />} />
 					<Route path='/hero/:heroId' element={<HeroDetailPage />} />
-					<Route path='*' element={<ErrorPage/>} />
-					
+					<Route path='/hero/favorite' element={<FavoritePage />} />
+					<Route path='*' element={<ErrorPage />} />
 				</Routes>
 			</div>
 			<Footer />
