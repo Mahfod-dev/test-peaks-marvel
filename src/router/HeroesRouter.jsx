@@ -21,7 +21,7 @@ const HeroesRouter = () => {
 				<Routes>
 					<Route path='/' element={<HeroesPage />} />
 					<Route path='/hero/:heroId' element={<HeroDetailPage />} />
-					<Route path='/hero/favorite' element={<FavoritePage />} />
+					<Route path='/favorites' element={<FavoritePage />} />
 					<Route path='*' element={<ErrorPage />} />
 				</Routes>
 			</div>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { useHeroes } from '../context/HeroesContext';
 import {
@@ -5,6 +6,8 @@ import {
 	getHeroImage,
 	getComicsByThird,
 } from '../helpers/getHeroById';
+import { toogleFavorite,existInFavorites } from '../helpers/localFavorite';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 /**
  *  Component HeroDetailPage to show the detail of the hero
@@ -31,6 +34,10 @@ import {
  */
 
 export const HeroDetailPage = () => {
+	const [isFavorite, setIsFavorite] = useState(
+		existInFavorites(+useParams().heroId)
+	);
+
 	const { heroId } = useParams();
 	const navigate = useNavigate();
 
@@ -49,12 +56,31 @@ export const HeroDetailPage = () => {
 	const heroImageUrl = getHeroImage(hero.thumbnail);
 	const heroThirdComics = getComicsByThird(hero);
 
+	const onClickFavorite = () => {
+		
+		setIsFavorite(!isFavorite);
+		toogleFavorite(hero.id);
+	};
+
 	return (
 		<div className='row mt-5' style={{ height: '100vh' }}>
 			<div className='col-4'>
 				<img src={heroImageUrl} alt={hero.name} className='img-thumbnail' />
 			</div>
 			<div className='col-8'>
+				<div style={{ width: '80px' }} onClick={onClickFavorite}>
+					{isFavorite ? (
+						<div>
+							<AiFillHeart className='icon-heart' /> <span>Favorite</span>
+						</div>
+					) : (
+						<div>
+							<AiOutlineHeart className='icon-heart' />
+							<span>Delete Favorite</span>
+						</div>
+					)}
+				</div>
+
 				<h3>{hero.name}</h3>
 				<ul className='list-group list-group-flush'>
 					<li className='list-group-item'>

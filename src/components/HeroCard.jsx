@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getHeroImage } from '../helpers/getHeroById';
 import PropTypes from 'prop-types';
@@ -20,24 +21,24 @@ import PropTypes from 'prop-types';
  * return (
  *  <HeroCard id={id} name={name} description={description} thumbnail={thumbnail} />
  * )
- * 
- *	
+ *
+ *
  *
  */
 
 export function HeroCard({ id, description, name, thumbnail }) {
-	
-
 	const heroImageUrl = getHeroImage(thumbnail);
 
 	return (
 		<div className='col'>
 			<div className='card' style={{ width: '18rem' }}>
 				<img className='card-img-top' src={heroImageUrl} alt={name} />
+
 				<div className='card-body'>
 					<Link to={`/hero/${id}`} className='card-title'>
 						{name}
 					</Link>
+
 					{description ? (
 						<p className='card-text'>{description}</p>
 					) : (
@@ -50,23 +51,23 @@ export function HeroCard({ id, description, name, thumbnail }) {
 }
 
 HeroCard.propTypes = {
-	  /**
-   * The id of the hero.
-   */
+	/**
+	 * The id of the hero.
+	 */
 	id: PropTypes.number.isRequired,
-	  /**
-   * The name of the hero.
-   */
+	/**
+	 * The name of the hero.
+	 */
 	name: PropTypes.string.isRequired,
-		  /**
-   * The description of the hero.
-   * @default 'sorry we will soon have the description'
-   */	
+	/**
+	 * The description of the hero.
+	 * @default 'sorry we will soon have the description'
+	 */
 	description: PropTypes.string,
-	  /**
-   * The thumbnail of the hero.
-   * @default 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087'
-   * @default 'jpg'
-   */
+	/**
+	 * The thumbnail of the hero.
+	 * @default 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087'
+	 * @default 'jpg'
+	 */
 	thumbnail: PropTypes.object.isRequired,
 };

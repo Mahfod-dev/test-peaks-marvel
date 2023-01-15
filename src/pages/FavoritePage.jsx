@@ -1,6 +1,9 @@
-const FavoritePage = () => {
-  return (
-    <div>FavoritePage</div>
-  )
-}
-export default FavoritePage
+import NoFavorite from '../components/ui/NoFavorite';
+
+export const FavoritePage = () => {
+	return (
+		<>
+			<NoFavorite />
+		</>
+	);
+};
