@@ -30,11 +30,6 @@ import {
  * )
  */
 
-
-
-
-
-
 export const HeroDetailPage = () => {
 	const { heroId } = useParams();
 	const navigate = useNavigate();
@@ -43,16 +38,16 @@ export const HeroDetailPage = () => {
 
 	const hero = getHeroById(+heroId, heroes);
 
+	if (!hero) {
+		return <Navigate to='/' />;
+	}
+
 	const onNavigateBack = () => {
 		navigate(-1);
 	};
 
 	const heroImageUrl = getHeroImage(hero.thumbnail);
 	const heroThirdComics = getComicsByThird(hero);
-
-	if (!hero) {
-		return <Navigate to='/' />;
-	}
 
 	return (
 		<div className='row mt-5' style={{ height: '100vh' }}>

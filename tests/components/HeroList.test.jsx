@@ -23,7 +23,7 @@ describe('HeroList', () => {
 		const heroesData = await loadHeroesCharacters();
 
 		render(
-			<HeroesContext.Provider value={{ heroes: heroesData, loading: false }}>
+			<HeroesContext.Provider value={{ heroes: heroesData[0], loading: false }}>
 				<HeroList />
 			</HeroesContext.Provider>,
 			{ wrapper: BrowserRouter }
