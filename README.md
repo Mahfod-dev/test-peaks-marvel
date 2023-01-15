@@ -15,9 +15,7 @@ ReactJS Vitest React-docgen
 
 #### Example:
 
-![marvel](https://user-images.githubusercontent.com/62814940/212480454-1fb26a34-d0c7-49cf-9ea6-2145453b27bf.png)
-
-![marveldetail](https://user-images.githubusercontent.com/62814940/212480563-6e51be82-1b08-4fab-b6f7-7d9cdcee6231.png)
+![screencapture-localhost-5173-2023-01-15-20_20_02](https://user-images.githubusercontent.com/62814940/212562413-f47db0eb-d138-4d87-8e66-530b656bece0.png)
 
 ## Installation and Setup Instructions
 
