@@ -20,14 +20,42 @@ import { heroesLocalStorage } from '../helpers/localFavorite';
  * @param {func} onNavigateBack - The function to navigate back.
  * @param {string} heroImageUrl - The hero image url.
  * @param {array} heroThirdComics - The hero third comics.
+ * @param {func} onClickFavorite - The function to click favorite.
+ * @param {boolean} isFavorite - The boolean to know if the hero is favorite.
+ * @param {func} setIsFavorite - The function to set the favorite.
+ * @param {func} toogleFavorite - The function to toogle the favorite.
+ * @param {func} existInFavorites - The function to know if the hero is favorite.
+ * @param {func} heroesLocalStorage - The function to get the heroes from local storage.
+ * @param {func} getHeroById - The function to get the hero by id.
+ * @param {func} getHeroImage - The function to get the hero image.
+ * @param {func} getComicsByThird - The function to get the comics by third.
+ * @param {func} useParams - The function to get the params.
+ * @param {func} useNavigate - The function to navigate.
+ * @param {func} useState - The function to use state.
+ * @param {func} useEffect - The function to use effect.
+ * @param {func} Link - The function to link.
+ * @param {func} AiOutlineHeart - The function to outline heart.
+ * @param {func} AiFillHeart - The function to fill heart.
+ * 
  * @returns {JSX.Element} - A JSX element that displays the detail of the hero.
  * @example
+ *  
+ * const isFavorite = true;
+ * const setIsFavorite = () => {};
+ * const toogleFavorite = () => {};
+ * const existInFavorites = () => {};
+ * const heroesLocalStorage = () => {};
+ * const getHeroById = () => {};
+ * const getHeroImage = () => {};
+ * const getComicsByThird = () => {};
+ * 
  * const heroId = 1;
  * const navigate = () => {};
  * const heroes = [{ id: 1, name: 'superman' }];
  * const hero = { id: 1, name: 'superman' };
  * const onNavigateBack = () => {};
  * const heroImageUrl = 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087';
+ 
  * const heroThirdComics = [{ id: 1, name: 'superman' }];
  * return (
  * <HeroDetailPage  />
