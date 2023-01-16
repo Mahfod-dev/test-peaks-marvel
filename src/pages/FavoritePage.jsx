@@ -2,14 +2,23 @@ import { useState, useEffect } from 'react';
 import { Favorite } from '../components/Favorite';
 import NoFavorite from '../components/ui/NoFavorite';
 import { heroesLocalStorage } from '../helpers/localFavorite';
+import { useHeroes } from '../context/HeroesContext';
 
 export const FavoritePage = () => {
-	const [favorite, setFavorite] = useState([]);
+	const [favorite, setFavorite] = useState(() => heroesLocalStorage());
 
-	useEffect(() => {
-		setFavorite(heroesLocalStorage());
-	}, []);
+	const { heroes } = useHeroes();
 
+	const favoriteHero = favorite.map((favorite) => {
+		return heroes.find((hero) => hero.id === favorite);
+	});
+
+	const onDeleteFavorite = (id) => {
+		const newFavorite = favorite.filter((favorite) => favorite !== id);
+		setFavorite(newFavorite);
+
+		localStorage.setItem('favorites', JSON.stringify(newFavorite));
+	};
 
 	return (
 		<>
@@ -17,8 +26,12 @@ export const FavoritePage = () => {
 				<NoFavorite />
 			) : (
 				<div className='row'>
-					{favorite.map((favorite, index) => (
-						<Favorite key={index} favorite={favorite} />
+					{favoriteHero.map((favorite, index) => (
+						<Favorite
+							key={index}
+							{...favorite}
+							onDeleteFavorite={onDeleteFavorite}
+						/>
 					))}
 				</div>
 			)}

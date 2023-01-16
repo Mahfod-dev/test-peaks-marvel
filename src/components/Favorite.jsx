@@ -1,29 +1,23 @@
-import { useHeroes } from '../context/HeroesContext';
-import { getHeroById, getHeroImage } from '../helpers/getHeroById';
-import { toogleFavorite } from '../helpers/localFavorite';
+import { getHeroImage } from '../helpers/getHeroById';
 
-export const Favorite = ({ favorite }) => {
-	const { heroes } = useHeroes();
 
-	const hero = getHeroById(favorite, heroes);
+export const Favorite = ({ id, name, thumbnail, onDeleteFavorite }) => {
 
-	const image = getHeroImage(hero.thumbnail);
 
-	const onClickFavorite = () => {
-		toogleFavorite(hero.id);
-       };
+	const image = getHeroImage(thumbnail);
+
 
 	return (
 		<>
 			<div className='card ms-3' style={{ maxWidth: 750 }}>
 				<div className='row no-gutters'>
 					<div className='col-md-4'>
-						<img src={image} className='card-img' alt={hero.name} />
+						<img src={image} className='card-img' alt={name} />
 					</div>
 					<div className='col-md-8'>
 						<div className='card-body'>
-							<h5 className='card-title'>{hero?.name}</h5>
-							<button onClick={onClickFavorite}>Delete Favori</button>
+							<h5 className='card-title'>{name}</h5>
+							<button onClick={() => onDeleteFavorite(id)}>Delete Favori</button>
 						</div>
 					</div>
 				</div>
