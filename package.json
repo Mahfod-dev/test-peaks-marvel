@@ -4,9 +4,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --port 3000",
 		"build": "vite build",
 		"preview": "vite preview",
+		"lint": "eslint --ext .js,.jsx",
 		"docs": "react-docgen --pretty ./src/components > docs.json",
 		"test": "vitest",
 		"coverage": "vitest run --coverage"
@@ -32,9 +33,12 @@
 		"@types/react-dom": "^18.0.9",
 		"@vitejs/plugin-react": "^3.0.0",
 		"babel-plugin-transform-import-meta": "^2.2.0",
+		"eslint": "^8.32.0",
+		"eslint-config-react-app": "^7.0.1",
 		"jsdom": "^21.0.0",
 		"react-docgen": "^5.4.3",
 		"vite": "^4.0.0",
+		"vite-plugin-eslint": "^1.8.1",
 		"vitest": "^0.27.1"
 	}
 }

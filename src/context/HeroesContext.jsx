@@ -1,6 +1,11 @@
-import { useContext, createContext, useState, useEffect } from 'react';
+import {
+	useContext,
+	createContext,
+	useState,
+	useEffect,
+	useCallback,
+} from 'react';
 import { loadHeroesCharacters } from '../api/fetchApiMarvel';
-import { paginate } from '../helpers/paginate';
 
 /**
  *  HeroesContext is a context that provides the heroes and loading state.
@@ -55,28 +60,31 @@ export const HeroesProvider = ({ children }) => {
 		}
 	}, [page]);
 
-	const nextPage = () => {
+	const nextPage = useCallback(() => {
 		setPage((oldPage) => {
-			let nextPage = oldPage + 1;
-			if (nextPage > heroes.length - 1) {
-				nextPage = 0;
+			let next = oldPage + 1;
+			if (next > heroes.length - 1) {
+				next = 0;
 			}
-			return nextPage;
-		})
-	};
+			return next;
+		});
+	}, [setPage, heroes.length]);
 
-	const prevPage = () => {
+	const prevPage = useCallback(() => {
 		setPage((oldPage) => {
-			let prevPage = oldPage - 1;
-			if (prevPage < 0) {
-				prevPage = heroes.length - 1;
+			let prev = oldPage - 1;
+			if (prev < 0) {
+				prev = heroes.length - 1;
 			}
-			return prevPage;
-		})
-	};
+			return prev;
+		});
+	}, [setPage, heroes.length]);
+
+
 
 	return (
-		<HeroesContext.Provider value={{ heroes, loading,page,setPage,prevPage,nextPage }}>
+		<HeroesContext.Provider
+			value={{ heroes, loading, page, setPage, prevPage, nextPage }}>
 			{children}
 		</HeroesContext.Provider>
 	);

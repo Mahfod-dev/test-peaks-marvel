@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { Favorite } from '../components/Favorite';
 import NoFavorite from '../components/ui/NoFavorite';
 import { heroesLocalStorage } from '../helpers/localFavorite';
@@ -16,24 +16,20 @@ import { useHeroes } from '../context/HeroesContext';
  * @param {func} useEffect - The function to use effect.
  * @param {func} useHeroes - The function to use heroes.
  * @param {func} heroesLocalStorage - The function to get the heroes from local storage.
- * 
+ *
  * @returns {JSX.Element} - A JSX element that displays the favorite heroes.
  * @example
- * 	
+ *
  * const favorite = [{ id: 1, name: 'superman' }];
  * const setFavorite = () => {};
  * const heroes = [{ id: 1, name: 'superman' }];
  * const favoriteHero = [{ id: 1, name: 'superman' }];
  * const onDeleteFavorite = () => {};
- * 	
+ *
  * return (
  * <FavoritePage  />
  * )
  * */
-
-
-
-
 
 export const FavoritePage = () => {
 	const [favorite, setFavorite] = useState(() => heroesLocalStorage());
@@ -44,16 +40,27 @@ export const FavoritePage = () => {
 		return heroes.find((hero) => hero.id === favorite);
 	});
 
-	const onDeleteFavorite = (id) => {
 
-		const newHeroFavorite = [...favorite]
+	const onDeleteFavorite = useCallback(
+	  (id) => {
+			const newHeroFavorite = [...favorite];
 
-
-		const newFavorite = favorite.filter((favorite) => favorite !== id);
+		const newFavorite = newHeroFavorite.filter((favorite) => favorite !== id);
 		setFavorite(newFavorite);
 
-		localStorage.setItem('favorites', JSON.stringify(newFavorite));
-	};
+		localStorage.setItem('favorites', JSON.stringify(newFavorite))},
+	  [favorite],
+	)
+	
+
+	// const onDeleteFavorite = (id) => {
+	// 	const newHeroFavorite = [...favorite];
+
+	// 	const newFavorite = newHeroFavorite.filter((favorite) => favorite !== id);
+	// 	setFavorite(newFavorite);
+
+	// 	localStorage.setItem('favorites', JSON.stringify(newFavorite));
+	// };
 
 	return (
 		<>

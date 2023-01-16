@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Navigate, useParams, useNavigate, Link } from 'react-router-dom';
 import { useHeroes } from '../context/HeroesContext';
 import {
@@ -72,7 +72,7 @@ export const HeroDetailPage = () => {
 
 	const { heroes } = useHeroes();
 
-	const hero = getHeroById(+heroId, heroes);
+	const hero = useMemo(() => getHeroById(+heroId, heroes), [heroId, heroes]);
 
 	const heroLocalStorage = heroesLocalStorage();
 
@@ -85,6 +85,7 @@ export const HeroDetailPage = () => {
 	};
 
 	const heroImageUrl = getHeroImage(hero.thumbnail);
+
 	const heroThirdComics = getComicsByThird(hero);
 
 	const onClickFavorite = () => {
