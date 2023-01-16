@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, memo } from 'react';
 import { Navigate, useParams, useNavigate, Link } from 'react-router-dom';
 import { useHeroes } from '../context/HeroesContext';
 import {
@@ -62,7 +62,7 @@ import { heroesLocalStorage } from '../helpers/localFavorite';
  * )
  */
 
-export const HeroDetailPage = () => {
+export const HeroDetailPage = memo(() => {
 	const [isFavorite, setIsFavorite] = useState(
 		existInFavorites(+useParams().heroId)
 	);
@@ -141,4 +141,4 @@ export const HeroDetailPage = () => {
 			</div>
 		</div>
 	);
-};
+});

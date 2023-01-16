@@ -40,18 +40,17 @@ export const FavoritePage = () => {
 		return heroes.find((hero) => hero.id === favorite);
 	});
 
-
 	const onDeleteFavorite = useCallback(
-	  (id) => {
+		(id) => {
 			const newHeroFavorite = [...favorite];
 
-		const newFavorite = newHeroFavorite.filter((favorite) => favorite !== id);
-		setFavorite(newFavorite);
+			const newFavorite = newHeroFavorite.filter((favorite) => favorite !== id);
+			setFavorite(newFavorite);
 
-		localStorage.setItem('favorites', JSON.stringify(newFavorite))},
-	  [favorite],
-	)
-	
+			localStorage.setItem('favorites', JSON.stringify(newFavorite));
+		},
+		[favorite]
+	);
 
 	return (
 		<>

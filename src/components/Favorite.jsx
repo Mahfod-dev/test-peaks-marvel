@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getHeroImage } from '../helpers/getHeroById';
+import { memo } from 'react';
 
 /**
  * Favorite is a reusable component that displays a card of favorites.
