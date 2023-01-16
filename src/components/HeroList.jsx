@@ -1,6 +1,6 @@
 import { useHeroes } from '../context/HeroesContext';
 import { HeroCard } from './HeroCard';
-import Spinner from './ui/Spinner';
+import { Spinner } from './ui';
 
 /**
  * Component HeroList for showing details of the heroes.
@@ -19,27 +19,24 @@ import Spinner from './ui/Spinner';
  * return (
  * <HeroList heroes={heroes} />
  * )
- * 
+ *
  * @returns {JSX.Element} - A JSX element that displays a list of heroes.
- * 
+ *
  * @example
  * const loading = true;
  *	if (loading) {
  * 		return <Spinner />;
  * 	}
  *  @returns {JSX.Element} - A JSX element that displays a spinner.
- * 	
+ *
  */
-
-
 
 export const HeroList = () => {
 	const { heroes, loading } = useHeroes();
-	
+
 	if (loading) {
 		return <Spinner />;
 	}
-
 
 	return (
 		<div className='row row-cols-1 row-cols-md-3 g-3'>

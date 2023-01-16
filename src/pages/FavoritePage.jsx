@@ -31,7 +31,7 @@ import { useHeroes } from '../context/HeroesContext';
  * )
  * */
 
-export const FavoritePage = () => {
+const FavoritePage = () => {
 	const [favorite, setFavorite] = useState(() => heroesLocalStorage());
 
 	const { heroes } = useHeroes();
@@ -70,3 +70,5 @@ export const FavoritePage = () => {
 		</>
 	);
 };
+
+export default FavoritePage;

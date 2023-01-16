@@ -1,4 +1,6 @@
-export * from './HeroesPage'
-export * from './HeroDetailPage'
-export * from './ErrorPage'
-export * from './FavoritePage'
+// import ErrorPage from "./ErrorPage";
+// import FavoritePage from "./FavoritePage";
+// import HeroDetailPage from "./HeroDetailPage";
+// import HeroesPage from "./HeroesPage";
+
+// export {ErrorPage, FavoritePage, HeroDetailPage, HeroesPage}

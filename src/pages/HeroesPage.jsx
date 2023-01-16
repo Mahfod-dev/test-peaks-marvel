@@ -1,5 +1,5 @@
 import { HeroList } from '../components/HeroList';
-import Spinner from '../components/ui/Spinner';
+import { Spinner } from '../components/ui';
 import { useHeroes } from '../context/HeroesContext';
 import { Paginate } from '../components/Paginate';
 
@@ -42,7 +42,7 @@ import { Paginate } from '../components/Paginate';
  */
 
 export const HeroesPage = () => {
-	const { loading, heroes, page, nextPage, prevPage,setPage } = useHeroes();
+	const { loading, heroes, page, nextPage, prevPage, setPage } = useHeroes();
 
 	if (loading) {
 		return <Spinner />;

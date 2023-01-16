@@ -33,6 +33,7 @@ function HeroesApp() {
 		<HeroesProvider>
 			<HeroesRouter />
 		</HeroesProvider>
+	
 		
 	);
 }

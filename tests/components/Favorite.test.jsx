@@ -24,7 +24,7 @@ describe('Favorite', () => {
 			{ wrapper: BrowserRouter }
 		);
 
-		screen.logTestingPlaygroundURL();
+		
 
 		expect(screen.getByRole('link', { name: /superman/i })).toBeTruthy();
 
@@ -41,6 +41,6 @@ describe('Favorite', () => {
 
 		onDeleteFavorite.mockClear();
 
-		screen.debug();
+
 	});
 });

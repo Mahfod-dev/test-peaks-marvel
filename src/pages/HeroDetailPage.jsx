@@ -62,7 +62,7 @@ import { heroesLocalStorage } from '../helpers/localFavorite';
  * )
  */
 
-export const HeroDetailPage = memo(() => {
+const HeroDetailPage = memo(() => {
 	const [isFavorite, setIsFavorite] = useState(
 		existInFavorites(+useParams().heroId)
 	);
@@ -142,3 +142,5 @@ export const HeroDetailPage = memo(() => {
 		</div>
 	);
 });
+
+export default HeroDetailPage;
