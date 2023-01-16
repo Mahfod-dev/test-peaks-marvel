@@ -53,15 +53,6 @@ export const FavoritePage = () => {
 	)
 	
 
-	// const onDeleteFavorite = (id) => {
-	// 	const newHeroFavorite = [...favorite];
-
-	// 	const newFavorite = newHeroFavorite.filter((favorite) => favorite !== id);
-	// 	setFavorite(newFavorite);
-
-	// 	localStorage.setItem('favorites', JSON.stringify(newFavorite));
-	// };
-
 	return (
 		<>
 			{favorite.length === 0 ? (

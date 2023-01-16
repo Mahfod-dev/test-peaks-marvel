@@ -25,7 +25,7 @@ export const Favorite = ({ id, name, thumbnail, onDeleteFavorite }) => {
 	const image = getHeroImage(thumbnail);
 
 	return (
-		<div style={{ height: '100vh', marginTop: '10px' }}>
+		<div style={{ marginTop: '10px' }}>
 			<div className='card ms-3' style={{ maxWidth: 750 }}>
 				<div className='row no-gutters'>
 					<div className='col-md-4'>
