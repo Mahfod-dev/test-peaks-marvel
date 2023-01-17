@@ -1,15 +1,24 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import loadable from '@loadable/component';
-import ErrorPage from '../pages/ErrorPage';
-import { Navbar } from '../components/ui';
-import Footer from '../components/ui/Footer';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import loadable from "@loadable/component";
+import ErrorPage from "../pages/ErrorPage";
+import { Navbar, Spinner } from "../components/ui";
+import Footer from "../components/ui/Footer";
 
-const HeroesPage = loadable(() => import('../pages/HeroesPage'), {
-	resolveComponent: (component) => component.HeroesPage,
+const HeroesPage = loadable(
+  () => import(/* webpackPrefetch: true */ "../pages/HeroesPage"),
+  {
+    resolveComponent: (component) => component.HeroesPage,
+  }
+);
+const HeroDetailPage = loadable(() => import("../pages/HeroDetailPage"), {
+  fallback: <Spinner />,
 });
-const HeroDetailPage = loadable(() => import('../pages/HeroDetailPage'));
-const FavoritePage = loadable(() => import('../pages/FavoritePage'));
+const FavoritePage = loadable(() => import("../pages/FavoritePage"), {
+  fallback: <Spinner />,
+});
+
+HeroesPage.preload();
 
 /**
  * Component for showing HeroesRouter.
@@ -37,19 +46,19 @@ const FavoritePage = loadable(() => import('../pages/FavoritePage'));
  */
 
 const HeroesRouter = () => {
-	return (
-		<>
-			<Navbar />
-			<div className='container'>
-				<Routes>
-					<Route path='/' element={<HeroesPage />} />
-					<Route path='/hero/:heroId' element={<HeroDetailPage />} />
-					<Route path='/favorites' element={<FavoritePage />} />
-					<Route path='*' element={<ErrorPage />} />
-				</Routes>
-			</div>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<HeroesPage />} />
+          <Route path="/hero/:heroId" element={<HeroDetailPage />} />
+          <Route path="/favorites" element={<FavoritePage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  );
 };
 export default HeroesRouter;
