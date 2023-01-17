@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { getHeroImage } from '../helpers/getHeroById';
-import '../style/HeroesCard.css';
-import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import { getHeroImage } from "../helpers/getHeroById";
+import "../style/HeroesCard.css";
+import PropTypes from "prop-types";
 
 /**
  * HeroCard is a reusable component that displays a card of heroes.
@@ -27,44 +27,48 @@ import PropTypes from 'prop-types';
  */
 
 export function HeroCard({ id, description, name, thumbnail }) {
-	const heroImageUrl = getHeroImage(thumbnail);
+  const heroImageUrl = getHeroImage(thumbnail);
 
-	return (
-		<div className='my-card'>
-			<img srcSet={heroImageUrl} alt={name} width='100%' height='100%' />
+  const myImageStyle = { width: "615px", height: "350px" };
 
-			<Link to={`/hero/${id}`} className='profile-name'>
-				{name}
-			</Link>
-			<div className='profile-overview'>
-				{description ? (
-					<p className='card-text'>{description}</p>
-				) : (
-					<p className='card-text'>sorry we will soon have the description</p>
-				)}
-			</div>
-		</div>
-	);
+  return (
+    <>
+      <div className="my-card">
+        <img style={myImageStyle} srcSet={heroImageUrl} alt={name} />
+
+        <Link to={`/hero/${id}`} className="profile-name">
+          {name}
+        </Link>
+        <div className="profile-overview">
+          {description ? (
+            <p className="card-text">{description}</p>
+          ) : (
+            <p className="card-text">sorry we will soon have the description</p>
+          )}
+        </div>
+      </div>
+    </>
+  );
 }
 
 HeroCard.propTypes = {
-	/**
-	 * The id of the hero.
-	 */
-	id: PropTypes.number.isRequired,
-	/**
-	 * The name of the hero.
-	 */
-	name: PropTypes.string.isRequired,
-	/**
-	 * The description of the hero.
-	 * @default 'sorry we will soon have the description'
-	 */
-	description: PropTypes.string,
-	/**
-	 * The thumbnail of the hero.
-	 * @default 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087'
-	 * @default 'jpg'
-	 */
-	thumbnail: PropTypes.object.isRequired,
+  /**
+   * The id of the hero.
+   */
+  id: PropTypes.number.isRequired,
+  /**
+   * The name of the hero.
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * The description of the hero.
+   * @default 'sorry we will soon have the description'
+   */
+  description: PropTypes.string,
+  /**
+   * The thumbnail of the hero.
+   * @default 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087'
+   * @default 'jpg'
+   */
+  thumbnail: PropTypes.object.isRequired,
 };
