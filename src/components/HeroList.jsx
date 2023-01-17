@@ -34,10 +34,6 @@ import { Spinner } from "./ui";
 export const HeroList = () => {
   const { heroes, loading } = useHeroes();
 
-  // if (loading) {
-  // 	return <Spinner />;
-  // }
-
   return (
     <>
       {loading ? (

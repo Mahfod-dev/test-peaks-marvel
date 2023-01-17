@@ -29,10 +29,12 @@ import PropTypes from "prop-types";
 export function HeroCard({ id, description, name, thumbnail }) {
   const heroImageUrl = getHeroImage(thumbnail);
 
+  const myImageStyle = { width: "615px", height: "350px" };
+
   return (
     <>
       <div className="my-card">
-        <img srcSet={heroImageUrl} alt={name} width="100%" height="100%" />
+        <img style={myImageStyle} srcSet={heroImageUrl} alt={name} />
 
         <Link to={`/hero/${id}`} className="profile-name">
           {name}
