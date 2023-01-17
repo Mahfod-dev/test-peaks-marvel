@@ -96,7 +96,12 @@ const HeroDetailPage = memo(() => {
 	return (
 		<div className='row mt-5' style={{ height: '100vh' }}>
 			<div className='col-4'>
-				<img srcSet={heroImageUrl} alt={hero.name} className='img-thumbnail' />
+				<img
+					srcSet={heroImageUrl}
+					alt={hero.name}
+					width='250px'
+					height='250px'
+				/>
 			</div>
 			<div className='col-8'>
 				{heroLocalStorage.length > 5 ? (

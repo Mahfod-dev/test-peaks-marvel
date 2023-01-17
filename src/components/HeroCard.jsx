@@ -31,7 +31,7 @@ export function HeroCard({ id, description, name, thumbnail }) {
 
 	return (
 		<div className='my-card'>
-			<img className='img img-responsive' srcSet={heroImageUrl} alt={name} />
+			<img srcSet={heroImageUrl} alt={name} width='100%' height='100%' />
 
 			<Link to={`/hero/${id}`} className='profile-name'>
 				{name}
