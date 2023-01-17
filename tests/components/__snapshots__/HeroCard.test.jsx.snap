@@ -7,8 +7,8 @@ exports[`HeroCard > should render match snapshot  1`] = `
   >
     <img
       alt="A-Bomb (HAS)"
-      class="img img-responsive"
-      src="http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg"
+      srcset="http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg"
+      style="width: 615px; height: 350px;"
     />
     <a
       class="profile-name"
