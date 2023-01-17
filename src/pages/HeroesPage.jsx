@@ -44,21 +44,39 @@ import { Paginate } from '../components/Paginate';
 export const HeroesPage = () => {
 	const { loading, heroes, page, nextPage, prevPage, setPage } = useHeroes();
 
-	if (loading) {
-		return <Spinner />;
-	}
+	// if (loading) {
+	// 	return <Spinner />;
+	// }
 
 	return (
-		<div>
-			<h1>Marvel Heroes</h1>
-			<HeroList />
-			<Paginate
-				heroes={heroes}
-				page={page}
-				nextPage={nextPage}
-				prevPage={prevPage}
-				setPage={setPage}
-			/>
-		</div>
+		<>
+			{loading ? (
+				<Spinner />
+			) : (
+				<>
+					<h1>Marvel Heroes</h1>
+					<HeroList />
+					<Paginate
+						heroes={heroes}
+						page={page}
+						nextPage={nextPage}
+						prevPage={prevPage}
+						setPage={setPage}
+					/>
+				</>
+			)}
+
+			{/* <div>
+				<h1>Marvel Heroes</h1>
+				<HeroList />
+				<Paginate
+					heroes={heroes}
+					page={page}
+					nextPage={nextPage}
+					prevPage={prevPage}
+					setPage={setPage}
+				/>
+			</div> */}
+		</>
 	);
 };

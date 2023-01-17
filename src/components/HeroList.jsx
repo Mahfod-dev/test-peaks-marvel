@@ -34,15 +34,27 @@ import { Spinner } from './ui';
 export const HeroList = () => {
 	const { heroes, loading } = useHeroes();
 
-	if (loading) {
-		return <Spinner />;
-	}
+	// if (loading) {
+	// 	return <Spinner />;
+	// }
 
 	return (
-		<div className='row row-cols-1 row-cols-md-3 g-3'>
-			{heroes.map((hero) => {
-				return <HeroCard key={hero.id} {...hero} />;
-			})}
-		</div>
+		<>
+			{loading ? (
+				<Spinner />
+			) : (
+				<div className='row row-cols-1 row-cols-md-3 g-3'>
+					{heroes.map((hero) => {
+						return <HeroCard key={hero.id} {...hero} />;
+					})}
+				</div>
+			)}
+
+			{/* // }	<div className='row row-cols-1 row-cols-md-3 g-3'>
+		// 		{heroes.map((hero) => {
+		// 			return <HeroCard key={hero.id} {...hero} />;
+		// 		})}
+		// 	</div> */}
+		</>
 	);
 };

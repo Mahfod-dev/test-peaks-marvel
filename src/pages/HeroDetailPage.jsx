@@ -94,6 +94,7 @@ const HeroDetailPage = memo(() => {
 	};
 
 	return (
+		<>
 		<div className='row mt-5' style={{ height: '100vh' }}>
 			<div className='col-4'>
 				<img
@@ -145,6 +146,7 @@ const HeroDetailPage = memo(() => {
 				</button>
 			</div>
 		</div>
+		</>
 	);
 });
 
