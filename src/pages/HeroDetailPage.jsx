@@ -119,16 +119,15 @@ const HeroDetailPage = memo(() => {
 
           <h3>{hero.name}</h3>
           <ul className="list-group list-group-flush">
+            <b>Description:</b>
             <li className="list-group-item">
-              <b>description:</b> :
               {hero.description
                 ? hero.description
-                : "sorry we will soon have a description"}
+                : "Sorry we will soon have a description"}
             </li>
-            <li className="list-group-item">
-              <b>Comics:</b> {hero.comics.available}
-            </li>
-            <b>Comics:</b>
+            <b>Appearances into Comics:</b>
+            <li className="list-group-item">{hero.comics.available}</li>
+            <b>Third Comics:</b>
             {heroThirdComics.map((comic, index) => {
               return (
                 <li key={index} className="list-group-item">
