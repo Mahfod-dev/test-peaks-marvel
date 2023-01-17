@@ -49,7 +49,7 @@ const HeroesRouter = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container" style={{ width: "100vh" }}>
         <Routes>
           <Route path="/" element={<HeroesPage />} />
           <Route path="/hero/:heroId" element={<HeroDetailPage />} />

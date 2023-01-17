@@ -102,10 +102,10 @@ const HeroDetailPage = memo(() => {
           <img style={myImageStyle} srcSet={heroImageUrl} alt={hero.name} />
         </div>
         <div className="col-8">
-          {heroLocalStorage.length > 5 ? (
+          {heroLocalStorage.length > 4 ? (
             <>
               <div>Maximum of favorites added</div>
-              <Link to="/favorites">Go to favorites to delete your heroes</Link>
+              <Link to="/favorites">Go to favorite to delete your heroe</Link>
             </>
           ) : (
             <div style={{ width: "80px" }} onClick={onClickFavorite}>
@@ -123,7 +123,7 @@ const HeroDetailPage = memo(() => {
               <b>description:</b> :
               {hero.description
                 ? hero.description
-                : "sorry we will soon have the description"}
+                : "sorry we will soon have a description"}
             </li>
             <li className="list-group-item">
               <b>Comics:</b> {hero.comics.available}
