@@ -1,7 +1,7 @@
-import { HeroList } from '../components/HeroList';
-import { Spinner } from '../components/ui';
-import { useHeroes } from '../context/HeroesContext';
-import { Paginate } from '../components/Paginate';
+import { HeroList } from "../components/HeroList";
+import { Spinner } from "../components/ui";
+import { useHeroes } from "../context/HeroesContext";
+import { Paginate } from "../components/Paginate";
 
 /**
  * HeroesPage is the main page of the application.
@@ -42,41 +42,25 @@ import { Paginate } from '../components/Paginate';
  */
 
 export const HeroesPage = () => {
-	const { loading, heroes, page, nextPage, prevPage, setPage } = useHeroes();
+  const { loading, heroes, page, nextPage, prevPage, setPage } = useHeroes();
 
-	// if (loading) {
-	// 	return <Spinner />;
-	// }
-
-	return (
-		<>
-			{loading ? (
-				<Spinner />
-			) : (
-				<>
-					<h1>Marvel Heroes</h1>
-					<HeroList />
-					<Paginate
-						heroes={heroes}
-						page={page}
-						nextPage={nextPage}
-						prevPage={prevPage}
-						setPage={setPage}
-					/>
-				</>
-			)}
-
-			{/* <div>
-				<h1>Marvel Heroes</h1>
-				<HeroList />
-				<Paginate
-					heroes={heroes}
-					page={page}
-					nextPage={nextPage}
-					prevPage={prevPage}
-					setPage={setPage}
-				/>
-			</div> */}
-		</>
-	);
+  return (
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1>Marvel Heroes</h1>
+          <HeroList />
+          <Paginate
+            heroes={heroes}
+            page={page}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            setPage={setPage}
+          />
+        </>
+      )}
+    </>
+  );
 };

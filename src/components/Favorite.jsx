@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-import { getHeroImage } from '../helpers/getHeroById';
-
+import { Link } from "react-router-dom";
+import { getHeroImage } from "../helpers/getHeroById";
 
 /**
  * Favorite is a reusable component that displays a card of favorites.
@@ -23,29 +22,32 @@ import { getHeroImage } from '../helpers/getHeroById';
  * */
 
 export const Favorite = ({ id, name, thumbnail, onDeleteFavorite }) => {
-	const image = getHeroImage(thumbnail);
+  const image = getHeroImage(thumbnail);
 
-	return (
-		<div style={{ marginTop: '10px' }}>
-			<div className='card ms-3' style={{ maxWidth: 750 }}>
-				<div className='row no-gutters'>
-					<div className='col-md-4'>
-						<img src={image} className='card-img' alt={name} />
-					</div>
-					<div className='col-md-8'>
-						<div className='card-body d-flex row'>
-							<Link to={`/hero/${id}`} className='card-title'>
-								{name}
-							</Link>
-							<button
-								className='btn btn-primary w-25'
-								onClick={() => onDeleteFavorite(id)}>
-								Delete Favori
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <>
+      <div style={{ marginTop: "10px" }}>
+        <div className="card ms-3" style={{ maxWidth: 750 }}>
+          <div className="row no-gutters">
+            <div className="col-md-4">
+              <img src={image} className="card-img" alt={name} />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body d-flex row">
+                <Link to={`/hero/${id}`} className="card-title">
+                  {name}
+                </Link>
+                <button
+                  className="btn btn-primary w-25"
+                  onClick={() => onDeleteFavorite(id)}
+                >
+                  Delete Favori
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
